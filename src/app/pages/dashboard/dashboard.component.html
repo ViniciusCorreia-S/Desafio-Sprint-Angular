@@ -1,0 +1,36 @@
+<header>
+    <app-header></app-header>
+</header>
+
+<main>
+    <app-left-bar></app-left-bar>
+
+    <app-card title="Dashboard" class="cardDashboard" style="top: 20%; left: 15%;">
+        <form [formGroup]="selectVehicle">
+            <select formControlName="carro">
+                <option value="{{carro.id}}" *ngFor="let carro of vehicles">{{carro.vehicle}}</option>
+            </select>
+        </form>
+    </app-card>
+
+    <app-card title="Total de Vendas" class="cardDashboard" style="top: 20%; left: 35%;">
+        <h1 *ngIf="selectCar">{{ selectCar.volumetotal }}</h1>
+        <p>Unid.</p>
+    </app-card>
+
+    <app-card title="Conectados" class="cardDashboard" style="top: 20%; left: 55%;">
+        <h1 *ngIf="selectCar">{{ selectCar.connected }}</h1>
+        <p>Unid.</p>
+    </app-card>
+
+    <app-card title="Update Software" class="cardDashboard" style="top: 20%; left: 75%;">
+        <h1 *ngIf="selectCar">{{ selectCar.softwareUpdates }}</h1>
+        <p>Unid.</p>
+    </app-card>
+    <div class="imgVehicle">
+        <img *ngIf="selectCar" src="{{ selectCar.img }}" alt="" draggable="false">
+    </div>
+
+    <app-table></app-table>
+    
+</main>

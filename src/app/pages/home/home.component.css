@@ -1,0 +1,35 @@
+
+main {
+    background-image: url("/../../../ranger.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.cardHome {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 400px;
+    max-width: 40%;
+    max-height: 60%;
+    p {
+        font-size: 1.4rem;
+    }
+    button{
+        border: none;
+        background-color: #f0f0f0;
+        opacity: 0.9;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+}
+title {
+    font-size: 2rem;
+    font-weight: bold;
+}

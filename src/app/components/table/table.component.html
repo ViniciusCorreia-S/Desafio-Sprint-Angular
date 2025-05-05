@@ -1,0 +1,33 @@
+<!-- <table> -->
+    <thead>
+        <tr>
+            <th>Código - Vin</th>
+            <th>Odômetro</th>
+            <th>Nível de Combustível</th>
+            <th>Status</th>
+            <th>Lat.</th>
+            <th>Long.</th>
+        </tr>
+    </thead>
+    <form [formGroup]="selectCodeVin">
+        <tbody>
+            <tr>
+                <th><input formControlName="carro" type="text" [(ngModel)]="code"/><button (click)="Search()">Search</button></th>
+                <th *ngIf="selectCode">{{ this.selectCode.odometro }}km</th>
+                <th *ngIf="selectCode">{{ this.selectCode.nivelCombustivel }}%</th>
+                <th *ngIf="selectCode">{{ this.selectCode.status }}</th>
+                <th *ngIf="selectCode">{{ this.selectCode.lat }}</th>
+                <th *ngIf="selectCode">{{ this.selectCode.long }}</th>
+            </tr>
+        </tbody>
+        
+        <h1 *ngIf="this.selectCode">{{ this.selectCode.long }}</h1>
+    </form>
+    <tfoot>
+        <tr>
+            <h1>2FRHDUYS2Y63NHD22454</h1>
+            <h1>2FRHDUYS2Y63NHD22455</h1>
+            <h1>2RFAASDY54E4HDU34874</h1>
+        </tr>
+    </tfoot>
+<!-- </table> -->

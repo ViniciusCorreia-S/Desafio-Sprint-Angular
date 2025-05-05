@@ -1,0 +1,67 @@
+
+<form [formGroup]="loginForm" #formDir="ngForm" (ngSubmit)="Submit()">
+    <div class="input">
+        <div class="input-text">
+            <div class="input-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <input 
+                id="input"
+                type="text"
+                [(ngModel)]="name"
+                placeholder="Insira seu nome"
+                formControlName="nome"
+                name="nome"
+                required
+            />
+        </div>
+    </div>
+
+
+    <div class="erros">
+        <div *ngIf="validationErrorNome" class="alert alert-danger d-flex justify-content-around" role="alert" id="validation-error">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+            </svg>
+            O nome de usuário está incorreto!
+        </div>
+        <!-- <div *ngIf="validationErrorSenha" class="alert alert-danger d-flex justify-content-around" role="alert" id="validation-error">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+            </svg>
+            A senha de usuário está incorreta!
+        </div> -->
+    </div>
+
+    <div class="input">
+        <div class="input-text">
+            <div class="input-icon">
+                <i class="fa-solid fa-lock" id="iconInput"></i>
+            </div>
+            <input 
+                id="input"
+                [type]="passwordVisible ? 'text' : 'password'" 
+                [(ngModel)]="password" 
+                placeholder="Insira sua senha" 
+                formControlName="senha"
+                name="senha"
+                required
+            />
+
+            <button type="button" (click)="togglePasswordVisibility()" class="toggle-password">
+                <fa-icon [icon]="passwordVisible ? 'eye' : 'eye-slash'"></fa-icon>
+            </button>
+        </div>
+    </div>
+    
+    <div class="toggle">
+        <div class="form-check form-switch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Logar automaticamente</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        </div>
+
+        <button class="reset" (click)="resetForm()"><i class="fa-solid fa-trash"></i></button>
+    </div>
+    
+    <button type="submit" id="button" [disabled]="loginForm.invalid">Entrar</button>
+</form>

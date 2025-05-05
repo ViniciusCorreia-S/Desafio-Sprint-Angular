@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(0, 57, 143);
+    color: white;
+    font-family: "Special Gothic Condensed One", sans-serif;
+
+    thead th {
+        padding: 10px;
+        border: solid 1px black;
+        font-size: 1.2rem;
+    }
+    form tbody th {
+        padding: 10px;
+        background-color: white;
+        border: solid 1px rgb(184, 184, 184);
+
+        input {
+            width: 50%;
+        }
+    }
+    tfoot th {
+        padding: 10px;
+    }
+}
