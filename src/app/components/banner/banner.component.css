@@ -3,7 +3,7 @@
 }
 
 .descricao {
-  width: 90%;
+  width: fit-content;
   text-align: left;
   margin-left: 20px;
   position: fixed;

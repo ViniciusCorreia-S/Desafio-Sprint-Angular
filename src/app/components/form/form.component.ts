@@ -51,7 +51,7 @@ export class FormComponent {
   input :HTMLInputElement = document.querySelector('#input') as HTMLInputElement;
   
   resetForm () {
-    this.loginForm.reset();
+    // this.loginForm.reset();
   }
   
   validationErrorNome: boolean = false;
