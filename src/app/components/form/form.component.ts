@@ -56,7 +56,7 @@ export class FormComponent {
   
   validationErrorNome: boolean = false;
   validationErrorSenha: boolean = false;
-  user!: Usuario;
+  user: Usuario | null = null;
   url = "http://localhost:3001"
 
   dataUser() {
@@ -64,34 +64,33 @@ export class FormComponent {
   }
 
   Submit () {
-    this.dataUser();
-    
-    this.dataUser().subscribe((dados: any) => {
-      if(dados) {
-        this.user = dados;
-        console.log(this.user);
+    console.log('teste')
+    this.dataUser().subscribe( {
+      next: (dados: any) => {
+        this.user= dados;
+        console.log(dados)
+        localStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
+        this.router.navigate(['/home']);
+
+      }, error: (error) => {
+          this.validationErrorNome = true;
+          
+          setInterval(() => {
+            this.validationErrorNome = false;
+          },5000);
       }
     })
+    //   if(dados) {
+    //     this.user = dados;
+    //     console.log(dados);
+    //     this.router.navigate(['/home']);
+    //   }
+    // })
     
-    localStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
 
-    if (!this.user) {
-      this.validationErrorNome = true;
-    }
-    // if (this.user.senha) {
-    //   this.validationErrorSenha = true;
-    // }
-
-    setInterval(() => {
-      this.validationErrorNome = false;
-      // this.validationErrorSenha = false;
-    },5000);
+   
 
     let data = this.loginForm.value;
     console.table(data);
-
-    if (this.user) {
-      this.router.navigate(['/home']);
-    }
   }
 }

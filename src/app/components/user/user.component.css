@@ -1,6 +1,6 @@
 .userBtn {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     border: solid 1px #858585;
     background-color: #ffffff;
@@ -15,8 +15,8 @@
     cursor: pointer;
     z-index: 80;
     button {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         border-radius: 50px;
         background-color: transparent;
         border: none;

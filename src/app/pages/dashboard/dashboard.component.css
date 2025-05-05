@@ -19,7 +19,7 @@ main {
 .cardDashboard {
     position: fixed;
     display: flex;
-    width: 12rem;
+    width: 15rem;
     height: 10rem;
     max-width: 40%;
     max-height: 60%;
@@ -36,7 +36,7 @@ main {
 .imgVehicle {
     width: 100%;
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 80%;
     transform: translate(-50%, -50%);
     img {

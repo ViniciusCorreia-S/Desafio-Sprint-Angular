@@ -16,7 +16,7 @@ export class VehiclesService {
   //   return this.http.post(`${this.url}/login`, {"nome": "" , "senha": ""})
   // }
 
-  dataVehicles(): Observable<any> {
+  dataVehicles() {
     return this.http.get(`${this.url}/vehicles`)
   }
 

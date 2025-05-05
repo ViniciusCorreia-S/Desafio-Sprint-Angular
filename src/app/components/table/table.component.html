@@ -1,4 +1,4 @@
-<!-- <table> -->
+<table>
     <thead>
         <tr>
             <th>Código - Vin</th>
@@ -9,25 +9,37 @@
             <th>Long.</th>
         </tr>
     </thead>
-    <form [formGroup]="selectCodeVin">
-        <tbody>
-            <tr>
-                <th><input formControlName="carro" type="text" [(ngModel)]="code"/><button (click)="Search()">Search</button></th>
-                <th *ngIf="selectCode">{{ this.selectCode.odometro }}km</th>
-                <th *ngIf="selectCode">{{ this.selectCode.nivelCombustivel }}%</th>
-                <th *ngIf="selectCode">{{ this.selectCode.status }}</th>
-                <th *ngIf="selectCode">{{ this.selectCode.lat }}</th>
-                <th *ngIf="selectCode">{{ this.selectCode.long }}</th>
-            </tr>
-        </tbody>
-        
-        <h1 *ngIf="this.selectCode">{{ this.selectCode.long }}</h1>
-    </form>
-    <tfoot>
+    
+    <ng-template #voidCode>
+        <th>...</th>
+    </ng-template>
+
+    <tbody>
         <tr>
-            <h1>2FRHDUYS2Y63NHD22454</h1>
-            <h1>2FRHDUYS2Y63NHD22455</h1>
-            <h1>2RFAASDY54E4HDU34874</h1>
+            <th>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1" (click)="Search()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Insira o código" aria-label="Input group example" aria-describedby="basic-addon1" [(ngModel)]="code">
+                    </div>
+                </div>
+            </th>
+            <th *ngIf="vin; else voidCode">{{ vin.odometro }} km</th>
+            <th *ngIf="vin; else voidCode">{{ vin.nivelCombustivel }}%</th>
+            <th *ngIf="vin; else voidCode">{{ vin.status }}</th>
+            <th *ngIf="vin; else voidCode">{{ vin.lat }}</th>
+            <th *ngIf="vin; else voidCode">{{ vin.long }}</th>
         </tr>
+    </tbody>
+
+    <tfoot>
+        <tr></tr>
     </tfoot>
-<!-- </table> -->
+</table>
+            <!-- 2FRHDUYS2Y63NHD22454
+            2FRHDUYS2Y63NHD22455
+            2RFAASDY54E4HDU34874 -->
