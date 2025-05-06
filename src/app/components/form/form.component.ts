@@ -32,26 +32,16 @@ export class FormComponent {
   
   constructor (library: FaIconLibrary , private router: Router , private service: VehiclesService , private http: HttpClient) {
     this.loginForm = new FormGroup({
-      nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
       senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
     library.addIcons(faEye, faEyeSlash);
   }
 
-  // get nome() {
-  //   return this.loginForm.get('nome')!;
-  // }
-
-  // get senha() {
-  //   return this.loginForm.get('senha')!;
-  // }
-
-
-
   input :HTMLInputElement = document.querySelector('#input') as HTMLInputElement;
   
   resetForm () {
-    // this.loginForm.reset();
+    this.loginForm.reset();
   }
   
   validationErrorNome: boolean = false;
@@ -80,15 +70,6 @@ export class FormComponent {
           },5000);
       }
     })
-    //   if(dados) {
-    //     this.user = dados;
-    //     console.log(dados);
-    //     this.router.navigate(['/home']);
-    //   }
-    // })
-    
-
-   
 
     let data = this.loginForm.value;
     console.table(data);

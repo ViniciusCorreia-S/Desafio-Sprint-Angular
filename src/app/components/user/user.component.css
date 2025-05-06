@@ -28,7 +28,7 @@
 
 .userOpen {
     width: 230px;
-    height: 140px;
+    height: 220px;
     margin-right: 60px;
 }
 
@@ -46,27 +46,31 @@
     box-shadow: 0 0 10px black;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     overflow: hidden;
     transition: all 0.3s;
     z-index: 79;
 
-    h1 {
-        font-size: 1.7rem;
-        color: #006eff;
-    }
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        color: #006eff;
+        text-align: center;
+    }
+    label {
+        margin-left: 20px;
+        margin-bottom: 10px;
     }
     div {
+        display: flex;
+        justify-content: center;
         button {
             background-color: #ffffff;
             color: #ff0000;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             border: none;
             padding: 6px 40px;
+            margin-top: 20px;
             cursor: pointer;
             &:hover {
                 background-color: #f0f0f0;
