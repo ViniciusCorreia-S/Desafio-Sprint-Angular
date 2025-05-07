@@ -4,7 +4,6 @@ import { LeftBarComponent } from '../../components/left-bar/left-bar.component';
 import { UserComponent } from '../../components/user/user.component';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { FormComponent } from '../../components/form/form.component';
 
 @Component({
   selector: 'app-home',
@@ -21,32 +20,4 @@ export class HomeComponent {
   }
 
   dadosUsuario: any;
-  // dataUser!: any
-
-  // constructor(private form : FormComponent) {}
-
-  // ngOnInit() {
-  //   this.dataUser = this.form.user.nome
-  // }
-
-
-  // user!: string;
-  // url = "http://localhost:3001";
-
-  // constructor(private http: HttpClient) {}
-  
-  // dataUser() {
-  //   return this.http.get(`${this.url}/login`)
-  // }
-  
-  // ngOnInit () {
-  //   this.dataUser();
-    
-  //   this.dataUser().subscribe((dados: any) => {
-  //     if(dados) {
-  //       this.user = dados.nome;
-  //       console.log(this.user);
-  //     }
-  //   })
-  // }
 }

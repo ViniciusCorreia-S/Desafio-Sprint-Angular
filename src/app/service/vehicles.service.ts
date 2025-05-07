@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +13,15 @@ export class VehiclesService {
 
   dataVehicles() {
     return this.http.get(`${this.url}/vehicles`)
+  }
+
+  // Private Routers
+
+  autorizar() {
+    localStorage.setItem('dadosUsuario' ,JSON.stringify('log On'))
+  }
+
+  deslogar() {
+    localStorage.clear()
   }
 }

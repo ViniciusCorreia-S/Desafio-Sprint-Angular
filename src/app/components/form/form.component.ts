@@ -59,7 +59,7 @@ export class FormComponent {
       next: (dados: any) => {
         this.user= dados;
         console.log(dados)
-        localStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
+        sessionStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
         this.router.navigate(['/home']);
 
       }, error: (error) => {

@@ -20,7 +20,7 @@ export class UserComponent {
   }
 
   ngOnInit() {
-    let data: any = localStorage.getItem('dadosUsuario');
+    let data: any = sessionStorage.getItem('dadosUsuario');
     this.Usuario = JSON.parse(data);
     console.log(this.Usuario)
   }
@@ -28,7 +28,7 @@ export class UserComponent {
   constructor(private router : Router) { }
 
   logout() {
-    localStorage.removeItem('dadosUsuario')
+    sessionStorage.removeItem('dadosUsuario')
     this.router.navigate(['/login']);
   }
 
