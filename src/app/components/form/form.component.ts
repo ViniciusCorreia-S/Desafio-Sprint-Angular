@@ -44,8 +44,7 @@ export class FormComponent {
     this.loginForm.reset();
   }
   
-  validationErrorNome: boolean = false;
-  validationErrorSenha: boolean = false;
+  validationError: boolean = false;
   user: Usuario | null = null;
   url = "http://localhost:3001"
 
@@ -54,24 +53,20 @@ export class FormComponent {
   }
 
   Submit () {
-    console.log('teste')
     this.dataUser().subscribe( {
       next: (dados: any) => {
-        this.user= dados;
+        this.user = dados;
         console.log(dados)
         sessionStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
         this.router.navigate(['/home']);
 
       }, error: (error) => {
-          this.validationErrorNome = true;
+          this.validationError = true;
           
           setInterval(() => {
-            this.validationErrorNome = false;
+            this.validationError = false;
           },5000);
       }
     })
-
-    let data = this.loginForm.value;
-    console.table(data);
   }
 }

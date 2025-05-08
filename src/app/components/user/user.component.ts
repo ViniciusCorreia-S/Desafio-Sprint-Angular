@@ -22,7 +22,6 @@ export class UserComponent {
   ngOnInit() {
     let data: any = sessionStorage.getItem('dadosUsuario');
     this.Usuario = JSON.parse(data);
-    console.log(this.Usuario)
   }
 
   constructor(private router : Router) { }
@@ -31,22 +30,4 @@ export class UserComponent {
     sessionStorage.removeItem('dadosUsuario')
     this.router.navigate(['/login']);
   }
-
-  // constructor(private http: HttpClient) { }
-
-  // Usuario: any;
-  // urlLocalStorage: string = "http://localhost:4200"
-
-  // dadosUsuario() {
-  //   return this.http.get(`${this.urlLocalStorage}`)
-  // }
-
-  // ngOnInit() {
-  //   this.dadosUsuario().subscribe( {
-  //     next: (dadosUser: any) => {
-  //       this.Usuario = dadosUser;
-  //       console.log(dadosUser)
-  //     }
-  //   })
-  // }
 }
