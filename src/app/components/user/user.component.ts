@@ -20,14 +20,21 @@ export class UserComponent {
   }
 
   ngOnInit() {
-    let data: any = sessionStorage.getItem('dadosUsuario');
-    this.Usuario = JSON.parse(data);
+    
+    if (localStorage.getItem('autoLogin')) {
+      let data: any = localStorage.getItem('dadosUsuario');
+      this.Usuario = JSON.parse(data);
+    } else {
+      let data: any = sessionStorage.getItem('dadosUsuario');
+      this.Usuario = JSON.parse(data);
+    }
   }
 
   constructor(private router : Router) { }
 
   logout() {
-    sessionStorage.removeItem('dadosUsuario')
+    sessionStorage.clear()
+    localStorage.clear()
     this.router.navigate(['/login']);
   }
 }

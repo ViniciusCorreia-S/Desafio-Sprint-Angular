@@ -1,6 +1,12 @@
 h1 {
-    color: #1717c2;
+    color: #1b357e;
     font-size: 4rem;
     font-family: "Candal", sans-serif;
     font-weight: 400;
+}
+
+@media (max-width: 1300px) {
+    h1 {
+        font-size: 3rem;
+    }
 }

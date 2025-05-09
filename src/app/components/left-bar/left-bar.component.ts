@@ -27,8 +27,11 @@ export class LeftBarComponent {
   constructor(private router: Router) {
   }
 
+  login() {
+    this.router.navigate(['/login']);
+  }
 
-  home( ) {
+  home() {
     this.router.navigate(['/home']);
   }
   

@@ -14,14 +14,4 @@ export class VehiclesService {
   dataVehicles() {
     return this.http.get(`${this.url}/vehicles`)
   }
-
-  // Private Routers
-
-  autorizar() {
-    localStorage.setItem('dadosUsuario' ,JSON.stringify('log On'))
-  }
-
-  deslogar() {
-    localStorage.clear()
-  }
 }

@@ -34,11 +34,10 @@ export class FormComponent {
     this.loginForm = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(5)]),
       senha: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      autoLogin: new FormControl('')
     });
     library.addIcons(faEye, faEyeSlash);
   }
-
-  input :HTMLInputElement = document.querySelector('#input') as HTMLInputElement;
   
   resetForm () {
     this.loginForm.reset();
@@ -57,9 +56,14 @@ export class FormComponent {
       next: (dados: any) => {
         this.user = dados;
         console.log(dados)
-        sessionStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
-        this.router.navigate(['/home']);
+        sessionStorage.setItem('dadosUsuario' , JSON.stringify(this.user))
+        sessionStorage.setItem('Login' , 'true')
 
+        if (this.loginForm.get('autoLogin')?.value) {
+          localStorage.setItem('autoLogin', 'true')
+          localStorage.setItem('dadosUsuario' ,JSON.stringify(this.user))
+        }
+        this.router.navigate(['/home']);
       }, error: (error) => {
           this.validationError = true;
           

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { LeftBarComponent } from '../../components/left-bar/left-bar.component';
@@ -26,7 +26,6 @@ export class DashboardComponent {
     this.service.dataVehicles().subscribe((vehicle: any) => {
       if(vehicle) {
         this.vehicles = vehicle.vehicles;
-        console.log(this.vehicles);
       }
     })
 
@@ -41,7 +40,6 @@ export class DashboardComponent {
     this.selectVehicle.controls.carro.valueChanges.subscribe(id => {
       let carro = this.vehicles[Number(id) - 1];
       this.selectCar = carro;
-      console.log(this.selectCar);
     })
   }
 }

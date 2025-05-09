@@ -32,7 +32,6 @@ export class TableComponent {
       switchMap(() => this.http.post(`${this.url}/vehicleData`, {vin : this.code}))).subscribe((code: any) => {
         if(code) {
           this.vin = code;
-          console.log(this.vin);/*2FRHDUYS2Y63NHD22454*/
         }
       })
   }

@@ -5,7 +5,7 @@ export const routerGuard: CanActivateFn = (route, state) => {
 
   const router = inject(Router)
 
-  if (sessionStorage.length > 0) {
+  if (sessionStorage.getItem('Login') || localStorage.getItem('autoLogin')) {
     return true
   } else {
     router.navigate(['/login']);

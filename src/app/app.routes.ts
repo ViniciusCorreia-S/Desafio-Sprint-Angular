@@ -8,5 +8,5 @@ export const routes: Routes = [
     {path : 'login', component:LoginComponent},
     {path : 'home', component:HomeComponent,  canActivate: [routerGuard]},
     {path : 'dashboard', component:DashboardComponent, canActivate: [routerGuard]},
-    {path : '**', redirectTo:'/login', pathMatch:'full'},
+    {path : '**', redirectTo:'/home', pathMatch:'full'},
 ];
