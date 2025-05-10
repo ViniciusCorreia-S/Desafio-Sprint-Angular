@@ -67,10 +67,13 @@ export class FormComponent {
       }, error: (error) => {
           this.validationError = true;
           
-          setInterval(() => {
-            this.validationError = false;
-          },5000);
+          // setInterval(() => {
+          //   this.validationError = false;
+          // },5000);
       }
     })
+  }
+  closeError() {
+    this.validationError = false;
   }
 }
